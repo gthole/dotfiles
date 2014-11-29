@@ -4,6 +4,10 @@
 # https://gitlab.com/paulswartz/dotfiles/blob/master/setup.sh
 
 here="$( cd "$(dirname "$0")" ; pwd -P )"
+
+echo "Make zsh default"
+chsh -s /bin/zsh
+
 echo "Linking from $here"
 
 _ln() {
