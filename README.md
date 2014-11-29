@@ -16,7 +16,6 @@ $ sh install.sh
 
 ## TODO
 
-- Homebrew installed and basic packages
 - Local bin executables
 - Additional config files
 - Clean up vim configuration
