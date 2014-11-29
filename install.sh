@@ -16,7 +16,7 @@ for dotfile in vim vimrc zshrc oh-my-zsh gitconfig gitignore_global; do
 done
 
 # Copy theme file into oh-my-zsh themes
-_ln gthole.zsh-theme $here/oh-my-zsh/themes/
+_ln gthole.zsh-theme $here/oh-my-zsh/themes/gthole.zsh-theme
 
 # Brew packages
 # If Homebrew isn't installed, then install it.
