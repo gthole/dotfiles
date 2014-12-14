@@ -32,10 +32,6 @@ map <C-j> <C-W><A-Down>
 map <C-k> <C-W><A-Up>
 map <C-l> <C-W><A-Right>
 
-
-"Ignore html_tidy issues"
-let g:syntastic_html_tidy_ignore_errors = ["trimming empty <i>", "<a> escaping malformed URI reference"]
-
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
