@@ -22,7 +22,7 @@ filetype plugin indent on
 
 map <C-n> :NERDTree
 map <C-;> <Esc>
-let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store', '.class$']
+let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store$', '.class$', '.swp$']
 let NERDTreeShowHidden = 1
 set backupdir=$TMPDIR,.
 
