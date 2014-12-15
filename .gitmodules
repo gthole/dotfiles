@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vitality.vim"]
 	path = vim/bundle/vitality.vim
 	url = git@github.com:sjl/vitality.vim
+[submodule "vim/bundle/vim-tmux-navigator"]
+	path = vim/bundle/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator
