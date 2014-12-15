@@ -32,6 +32,14 @@ map <C-j> <C-W><A-Down>
 map <C-k> <C-W><A-Up>
 map <C-l> <C-W><A-Right>
 
+"CtrlP mappings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|virtualenv|venv)$',
+  \ 'file': '\v\.(pyc|swp)$'
+  \ }
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
