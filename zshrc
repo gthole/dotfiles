@@ -22,3 +22,25 @@ export PATH=/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/usr/local/sbin:/bin:/
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# iTerm magic for tab title reporting
+export DISABLE_AUTO_TITLE="true"
+
+# Load tmux configuration
+tmux source-file ~/.tmuxrc &> /dev/null
+
+# Launch tmux shell on startup
+# If not running interactively, don't do anything
+# [[ $- != *i* ]] && return
+
+# if [[ -z "$TMUX" ]] ;then
+  # get the id of a deattached session
+#  ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" 
+  # if not available create a new one
+#  if [[ -z "$ID" ]] ;then 
+    # Start a new session if none available
+#    tmux new-session
+#  else
+    # if available attach to it
+#    tmux attach-session -t "$ID" 
+#  fi
+# fi
