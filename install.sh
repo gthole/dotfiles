@@ -34,6 +34,7 @@ brew update
 # Install!
 brew install git watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
 brew install imagemagick libpng jpeg libtiff
+brew install reattach-to-user-namespace
 
 # Give htop root access
 sudo chown root:wheel /usr/local/Cellar/htop-osx/*/bin/htop
