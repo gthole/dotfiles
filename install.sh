@@ -32,7 +32,7 @@ fi
 brew update
 
 # Install!
-brew install git watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
+brew install git vim watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
 brew install imagemagick libpng jpeg libtiff
 brew install reattach-to-user-namespace
 
