@@ -18,6 +18,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+"Support mouse
+set mouse=a
+
 filetype plugin indent on
 
 map <C-n> :NERDTree
