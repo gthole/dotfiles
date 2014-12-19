@@ -15,7 +15,7 @@ _ln() {
   ln -Ffhs $here/$1 $2
 }
 
-for dotfile in vim vimrc zshrc oh-my-zsh gitconfig gitignore_global; do
+for dotfile in vim vimrc zshrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global; do
   _ln $dotfile ~/.${dotfile}
 done
 
@@ -32,9 +32,12 @@ fi
 brew update
 
 # Install!
-brew install git vim watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
+brew install git watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
 brew install imagemagick libpng jpeg libtiff
 brew install reattach-to-user-namespace
+
+# Latest vim is problematic with NERDTree
+# brew install vim
 
 # Give htop root access
 sudo chown root:wheel /usr/local/Cellar/htop-osx/*/bin/htop
