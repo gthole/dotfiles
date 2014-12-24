@@ -1,7 +1,6 @@
 execute pathogen#infect()
 call pathogen#infect()
 call pathogen#helptags()
-filetype plugin indent on
 syntax enable
 set ignorecase 
 set incsearch
@@ -21,7 +20,8 @@ set expandtab
 "Support mouse
 set mouse=a
 
-filetype plugin indent on
+" Not so much on auto-indenting
+" filetype plugin indent on
 
 map <C-n> :NERDTree
 map <C-;> <Esc>
@@ -32,9 +32,8 @@ set backupdir=$TMPDIR,.
 let g:syntastic_check_on_open=1
 
 " 80 character line
-" Causes issues with ctrl-p opening over NERDTree
-" set textwidth=80
-" set colorcolumn=+1
+set textwidth=80
+set colorcolumn=+1
 
 "Easier pane navigation"
 map <C-h> <C-W><A-Left>
@@ -50,6 +49,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(pyc|swp)$'
   \ }
 
+" User ag 'the silver searcher' for ctrl-p.  Fast and respects .gitignore
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -66,7 +66,7 @@ endif
 autocmd StdinReadPre * let s:std_in=1
 
 " Auto-open NERDTree
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "Auto-trim trailing whitespace"
 autocmd BufWritePre *.py,*.js,*.json,*.jl :%s/\s\+$//e
