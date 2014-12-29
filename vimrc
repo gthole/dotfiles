@@ -1,11 +1,14 @@
 execute pathogen#infect()
 call pathogen#infect()
 call pathogen#helptags()
+
+"Basics"
 syntax enable
-set ignorecase 
+set ignorecase
 set incsearch
 colorscheme molokai
 set number
+filetype plugin indent on
 
 "Cursor colors"
 highlight Cursor guifg=white guibg=black
@@ -17,21 +20,23 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-"Support mouse
+"Support mouse"
 set mouse=a
 
-" Not so much on auto-indenting
-" filetype plugin indent on
-
+"NERDTree Settings"
 map <C-n> :NERDTree
 map <C-;> <Esc>
 let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store$', '.class$', '.swp$']
 let NERDTreeShowHidden = 1
 set backupdir=$TMPDIR,.
 
+"Syntastic settings"
 let g:syntastic_check_on_open=1
+let g:syntastic_aggregate_errors = 1
+"TODO: Figure out why jscs is so slow"
+let g:syntastic_javascript_checkers = ['jshint']
 
-" 80 character line
+"80 character line; TODO: split this off into after/"
 set textwidth=80
 set colorcolumn=+1
 
@@ -49,23 +54,19 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(pyc|swp)$'
   \ }
 
-" User ag 'the silver searcher' for ctrl-p.  Fast and respects .gitignore
+"User ag 'the silver searcher' for ctrl-p.  Fast and respects .gitignore"
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects
-  " .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
 
-
+"Auto commands"
+"Auto-open NERDTree"
 autocmd StdinReadPre * let s:std_in=1
-
-" Auto-open NERDTree
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "Auto-trim trailing whitespace"
