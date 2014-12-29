@@ -17,7 +17,7 @@ fi
 alias shtl="sshuttle --dns -r litbt 0/0 2> /dev/null"
 
 # Set path
-export PATH=/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rvm/bin:node_modules/.bin:$PATH
+export PATH=/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rvm/bin:node_modules/.bin:~/node_modules/.bin:$PATH
 
 # RVM never does seem to work correctly ...
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
