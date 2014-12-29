@@ -15,7 +15,7 @@ _ln() {
   ln -Ffhs $here/$1 $2
 }
 
-for dotfile in vim vimrc zshrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global; do
+for dotfile in vim vimrc zshrc jscsrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global; do
   _ln $dotfile ~/.${dotfile}
 done
 
@@ -42,5 +42,8 @@ brew install reattach-to-user-namespace
 # Give htop root access
 sudo chown root:wheel /usr/local/Cellar/htop-osx/*/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/*/bin/htop
+
+# Install npm packages
+npm install jscs jshint
 
 echo "All done"
