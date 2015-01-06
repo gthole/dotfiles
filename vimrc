@@ -18,6 +18,7 @@ highlight iCursor guifg=white guibg=steelblue
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set formatoptions-=t
 set expandtab
 
 "Support mouse"
