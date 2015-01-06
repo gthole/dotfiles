@@ -47,13 +47,33 @@ map <C-j> <C-W><A-Down>
 map <C-k> <C-W><A-Up>
 map <C-l> <C-W><A-Right>
 
-"CtrlP mappings
+"More natural split openings"
+set splitbelow
+set splitright
+
+"CtrlP mappings"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|virtualenv|venv)$',
   \ 'file': '\v\.(pyc|swp)$'
   \ }
+
+"Resize NERDTree if opening with only the NERDTree pane already present"
+function! NerdTreeOpenFunc(action, line)
+  "Check that the initial buffer is NERD tree and there are only two windows"
+  if (winnr("$") ==# 2 && bufname(winbufnr(1)) == "NERD_tree_1")
+    let size = g:NERDTreeWinSize
+    call call('ctrlp#acceptfile', [a:action, a:line])
+    "Resize the NERDTree window to it's original size"
+    exec("silent wincmd h")
+    exec("silent vertical resize ". size)
+    exec("silent wincmd p")
+  else
+    call call('ctrlp#acceptfile', [a:action, a:line])
+  endif
+endfunction
+let g:ctrlp_open_func = { 'files': 'NerdTreeOpenFunc' }
 
 "User ag 'the silver searcher' for ctrl-p.  Fast and respects .gitignore"
 if executable('ag')
@@ -67,8 +87,14 @@ endif
 
 "Auto commands"
 "Auto-open NERDTree"
+function! OpenNERDTree()
+  NERDTree
+  "Close the default empty pane opened at start"
+  exec("wincmd l")
+  exec("q")
+endfunction
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call call(function("OpenNERDTree"), []) | endif
 
 "Auto-trim trailing whitespace"
 autocmd BufWritePre *.py,*.js,*.json,*.jl :%s/\s\+$//e
