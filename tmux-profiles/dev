@@ -1,5 +1,11 @@
+# Don't auto-rename the window anymore, as we're committing to this dir
+set-option allow-rename off
+
 # Select the primary pane (0)
 selectp -t 0
+
+# Auto window naming (not quite ready yet)
+# rename-window "`echo ${PWD##*/}| perl -pe 's/-|_/ /g' | perl -pe 's/\S+/\u$&/g'`"
 
 # Split horizontally with a smaller side pane
 split-window -h -p 33 -c '#{pane_current_path}'
