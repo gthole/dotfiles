@@ -15,7 +15,7 @@ _ln() {
   ln -Ffhs $here/$1 $2
 }
 
-for dotfile in vim vimrc zshrc jscsrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global bin; do
+for dotfile in vim vimrc zshrc jscsrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global mbtastatusrc; do
   _ln $dotfile ~/.${dotfile}
 done
 
@@ -32,7 +32,7 @@ fi
 brew update
 
 # Install!
-brew install git watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
+brew install tmux git watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
 brew install imagemagick libpng jpeg libtiff
 brew install reattach-to-user-namespace
 
@@ -44,6 +44,7 @@ sudo chown root:wheel /usr/local/Cellar/htop-osx/*/bin/htop
 sudo chmod u+s /usr/local/Cellar/htop-osx/*/bin/htop
 
 # Install npm packages
-npm install jscs jshint request moment
+cd
+npm install jscs jshint gthole/mbtastatusline
 
 echo "All done"
