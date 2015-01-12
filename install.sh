@@ -5,8 +5,10 @@
 
 here="$( cd "$(dirname "$0")" ; pwd -P )"
 
-echo "Make zsh default"
-chsh -s /bin/zsh
+if [ "$SHELL" != "/bin/zsh" ]; then
+  echo "Making zsh the default shell"
+  chsh -s /bin/zsh
+fi
 
 echo "Linking from $here"
 
