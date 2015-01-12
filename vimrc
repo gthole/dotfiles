@@ -24,9 +24,11 @@ set expandtab
 "Support mouse"
 set mouse=a
 
+"Easier escape key"
+imap jj <Esc>
+
 "NERDTree Settings"
 map <C-n> :NERDTree
-map <C-;> <Esc>
 let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store$', '.class$', '.swp$']
 let NERDTreeShowHidden = 1
 set backupdir=$TMPDIR,.
