@@ -2,7 +2,7 @@
 	name = Greg Thole
 	email = gthole@gmail.com
 [core]
-	excludesfile = /Users/gthole/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [push]
