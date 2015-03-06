@@ -22,7 +22,7 @@ set formatoptions-=t
 set expandtab
 
 "Support mouse"
-set mouse=a
+"set mouse=a"
 
 "Easier escape key"
 imap jj <Esc>
