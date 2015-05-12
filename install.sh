@@ -17,7 +17,7 @@ _ln() {
   ln -Ffhs $here/$1 $2
 }
 
-for dotfile in vim vimrc zshrc jscsrc jshintrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global mbtastatusrc; do
+for dotfile in vim vimrc zshrc jscsrc jshintrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global mbtastatusrc xonshrc; do
   _ln $dotfile ~/.${dotfile}
 done
 
@@ -36,7 +36,7 @@ brew update
 # Install!
 brew install tmux git watch wget htop python3 node ag sshuttle cowsay tor torsocks s3cmd
 brew install imagemagick libpng jpeg libtiff
-brew install reattach-to-user-namespace
+brew install reattach-to-user-namespace xonsh
 
 # Latest vim is problematic with NERDTree
 # brew install vim
