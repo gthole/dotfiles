@@ -17,7 +17,7 @@ _ln() {
   ln -Ffhs $here/$1 $2
 }
 
-for dotfile in vim vimrc zshrc jscsrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global mbtastatusrc; do
+for dotfile in vim vimrc zshrc jscsrc jshintrc tmux.conf tmux-profiles oh-my-zsh gitconfig gitignore_global mbtastatusrc; do
   _ln $dotfile ~/.${dotfile}
 done
 
