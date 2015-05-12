@@ -24,14 +24,12 @@ set expandtab
 "Support mouse"
 "set mouse=a"
 
-"Easier escape key"
-imap jj <Esc>
-
 "NERDTree Settings"
 map <C-n> :NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store$', '.class$', '.swp$']
 let NERDTreeShowHidden = 1
-set backupdir=$TMPDIR,.
+set backupdir=$TMPDIR
+set directory=$TMPDIR
 
 "Syntastic settings"
 let g:syntastic_check_on_open=1
@@ -81,7 +79,7 @@ let g:ctrlp_open_func = { 'files': 'NerdTreeOpenFunc' }
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -U -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
