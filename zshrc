@@ -19,6 +19,9 @@ alias shtl="sshuttle --dns -r litbt 0/0 2> /dev/null"
 # Set path
 export PATH=/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rvm/bin:node_modules/.bin:~/node_modules/.bin:$PATH
 
+alias dm='docker-machine'
+alias dc='docker-compose'
+
 # RVM never does seem to work correctly ...
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
