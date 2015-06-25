@@ -1,19 +1,12 @@
 import subprocess
+from xonsh.environ import dirty_working_directory
 
-
-def git_state():
-    try:
-        state = subprocess.check_output(
-            'git status --porcelain 2> /dev/null',
-            shell=True
-        )
-        if state:
-            return $FORMATTER_DICT['BOLD_RED']
-    except subprocess.CalledProcessError:
-        pass
-    return $FORMATTER_DICT['BLUE']
-
+# Docker-*
+aliases['dc'] = 'docker-compose'
+aliases['dm'] = 'docker-machine'
 
 $FORMATTER_DICT['pwd'] = lambda: $PWD.split('/')[-1]
-$FORMATTER_DICT['git_state'] = git_state
-$PROMPT = ' {GREEN}{pwd}{git_state}{curr_branch} {WHITE}>> {NO_COLOR}'
+$FORMATTER_DICT['branch_color'] = lambda : (
+  $FORMATTER_DICT['BOLD_RED'] if dirty_working_directory() else
+  $FORMATTER_DICT['BOLD_BLUE'])
+$PROMPT = ' {GREEN}{pwd}{branch_color}{curr_branch} {BOLD_BLUE}>> {NO_COLOR}'
