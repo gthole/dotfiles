@@ -36,6 +36,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors = 1
 "TODO: Figure out why jscs is so slow"
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_ruby_checkers = ['rubylint']
 
 "80 character line; TODO: split this off into after/"
 set textwidth=80
@@ -97,4 +98,4 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call call(function("OpenNERDTree"), []) | endif
 
 "Auto-trim trailing whitespace"
-autocmd BufWritePre *.py,*.js,*.json,*.jl :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
