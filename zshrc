@@ -17,7 +17,7 @@ fi
 alias shtl="sshuttle --dns -r litbt 0/0 2> /dev/null"
 
 # Set path
-export PATH=/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rvm/bin:node_modules/.bin:~/node_modules/.bin:$PATH
+export PATH=bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rvm/bin:./.pip:./node_modules/.bin:~/node_modules/.bin:$PATH
 
 alias dm='docker-machine'
 alias dc='docker-compose'
