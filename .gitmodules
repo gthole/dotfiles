@@ -31,3 +31,18 @@
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/Dockerfile"]
+	path = vim/bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "vim/bundle/vim-terraform"]
+	path = vim/bundle/vim-terraform
+	url = git@github.com:hashivim/vim-terraform.git
+[submodule "vim/bundle/vim-gradle"]
+	path = vim/bundle/vim-gradle
+	url = git@github.com:tfnico/vim-gradle
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "vim/bundle/vim-fish"]
+	path = vim/bundle/vim-fish
+	url = git@github.com:dag/vim-fish.git

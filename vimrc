@@ -6,23 +6,32 @@ call pathogen#helptags()
 syntax enable
 set ignorecase
 set incsearch
-colorscheme molokai
+colorscheme mopkai
 set number
 filetype plugin indent on
+set shell=/bin/bash
 
 "Cursor colors"
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 
+inoremap <C-[> <Esc>
+
 "Two character tab expansion by default"
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set formatoptions-=t
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 "Support mouse"
 "set mouse=a"
+
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 "NERDTree Settings"
 map <C-n> :NERDTree
@@ -32,15 +41,17 @@ set backupdir=$TMPDIR
 set directory=$TMPDIR
 
 "Syntastic settings"
+let g:syntastic_shell = "/bin/zsh"
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors = 1
 "TODO: Figure out why jscs is so slow"
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_json_checkers = ['jshint']
 let g:syntastic_ruby_checkers = ['rubylint']
+let g:syntastic_java_checkers = []
 
 "80 character line; TODO: split this off into after/"
-set textwidth=80
-set colorcolumn=+1
+set colorcolumn=80
 
 "Easier pane navigation"
 map <C-h> <C-W><A-Left>
@@ -51,6 +62,9 @@ map <C-l> <C-W><A-Right>
 "More natural split openings"
 set splitbelow
 set splitright
+
+"JSON formatting
+command Json execute "%!python -m json.tool"
 
 "CtrlP mappings"
 let g:ctrlp_map = '<c-p>'
