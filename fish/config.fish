@@ -4,3 +4,7 @@ alias dm='docker-machine'
 alias dc='docker-compose'
 
 init_tmux
+
+if test $HOME/.keys
+    source $HOME/.keys
+end
