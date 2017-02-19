@@ -23,6 +23,7 @@
         "before": true,
         "beforeEach": true,
         "after": true,
+        "afterEach": true,
         "application": true,
         "angular": true,
         "inject": true,
