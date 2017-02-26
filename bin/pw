@@ -1,6 +1,14 @@
 #! /bin/bash
+# Wrapper around `pass` to make things a bit quicker
 
-if [[ $# == 1 ]]; then
+if [[ $1 == 'use' ]]; then
+    pass git checkout $2
+    pass git pull origin $2
+    echo "Using branch $2"
+elif [[ $1 == 'using' ]]; then
+    BRANCH=`pass git rev-parse --abbrev-ref HEAD`
+    echo "Using branch $BRANCH"
+elif [[ $# == 1 ]]; then
     # Default to "copy" mode
     pass -c $1
 elif [[ $# == 0 ]]; then
@@ -8,5 +16,6 @@ elif [[ $# == 0 ]]; then
 else
     # Auto-push to origin repo and keep everything up to date
     pass $@
-    pass git push origin master > /dev/null
+    BRANCH=`pass git rev-parse --abbrev-ref HEAD`
+    pass git push origin $BRANCH > /dev/null
 fi
