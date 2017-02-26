@@ -17,6 +17,7 @@ for dotfile in vim vimrc zshrc jscsrc jshintrc tmux.conf tmux-profiles oh-my-zsh
 done
 
 _ln fish ~/.config/fish
+_ln bin/pw /usr/local/bin/pw
 
 # Copy theme file into oh-my-zsh themes
 _ln gthole.zsh-theme $here/oh-my-zsh/themes/gthole.zsh-theme

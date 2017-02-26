@@ -1,0 +1,12 @@
+#! /bin/bash
+
+if [[ $# == 1 ]]; then
+    # Default to "copy" mode
+    pass -c $1
+elif [[ $# == 0 ]]; then
+    pass
+else
+    # Auto-push to origin repo and keep everything up to date
+    pass $@
+    pass git push origin master > /dev/null
+fi
