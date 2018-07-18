@@ -11,6 +11,8 @@ elif [[ $1 == 'using' ]]; then
 elif [[ $# == 1 ]]; then
     # Default to "copy" mode
     pass -c $1
+elif [[ $1 == 'git' ]]; then
+    pass $@
 elif [[ $# == 0 ]]; then
     pass
 else
