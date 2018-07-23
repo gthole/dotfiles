@@ -34,7 +34,7 @@ set pastetoggle=<F2>
 set showmode
 
 "NERDTree Settings"
-map <C-n> :NERDTree
+" map <C-n> :NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store$', '.class$', '.swp$']
 let NERDTreeShowHidden = 1
 set backupdir=$TMPDIR
@@ -49,6 +49,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_json_checkers = ['jshint']
 let g:syntastic_ruby_checkers = ['rubylint']
 let g:syntastic_java_checkers = []
+let g:typescript_indent_disable = 0
 
 "80 character line; TODO: split this off into after/"
 set colorcolumn=80
@@ -74,7 +75,10 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(pyc|swp)$'
   \ }
 
-"Resize NERDTree if opening with only the NERDTree pane already present"
+" ########################################################################
+" Resize NERDTree if opening with only the NERDTree pane already present"
+" ########################################################################
+
 function! NerdTreeOpenFunc(action, line)
   "Check that the initial buffer is NERD tree and there are only two windows"
   if (winnr("$") ==# 2 && bufname(winbufnr(1)) == "NERD_tree_1")
@@ -90,17 +94,38 @@ function! NerdTreeOpenFunc(action, line)
 endfunction
 let g:ctrlp_open_func = { 'files': 'NerdTreeOpenFunc' }
 
-"User ag 'the silver searcher' for ctrl-p.  Fast and respects .gitignore"
+" ########################################################################
+" User ag 'the silver searcher' for ctrl-p.  Fast and respects .gitignore"
+" ########################################################################
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -U -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
 
+" ########################################################################
+" Multipurpose Tab Key (thanks Gary Bernhardt)
+" Tab indents at the start of a line, but is autocomplete otherwise
+" ########################################################################
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+" ########################################################################
 "Auto commands"
+" ########################################################################
+
 "Auto-open NERDTree"
 function! OpenNERDTree()
   NERDTree
@@ -111,5 +136,18 @@ endfunction
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call call(function("OpenNERDTree"), []) | endif
 
+" Open a file in same position we last left it
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
 "Auto-trim trailing whitespace"
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\t/    /e
+
+"Open images with iTerm
+:autocmd BufEnter *.png,*.jpg,*gif exec ":silent ! open -g ".expand("%") | :bw
+
+"Don't expand tabs in make files"
+autocmd FileType make setlocal noexpandtab
