@@ -1,3 +1,4 @@
 *.swp
 .netrwhist
 fish/fishd.*
+mbtastatusrc.json

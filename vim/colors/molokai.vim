@@ -4,7 +4,7 @@
 " Modified by: Steve Losh <steve@stevelosh.com>
 "
 " Note: Based on the monokai theme for textmate
-" by Wimer Hazenberg and its darker variant 
+" by Wimer Hazenberg and its darker variant
 " by Hamish Stuart Macpherson
 "
 
@@ -213,7 +213,7 @@ if &t_Co > 255
 
    " NOTE: @pfdevilliers added this shit
    " Not sure if this color with underlined was defined already
-   " but I added it for the definition of a class that is a 
+   " but I added it for the definition of a class that is a
    " subclass.
    hi InheritUnderlined      ctermfg=118               cterm=underline
 

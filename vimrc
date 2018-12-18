@@ -14,6 +14,9 @@ set shell=/bin/bash
 "Cursor colors"
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
+hi Visual guifg=White guibg=LightBlue gui=none
+
+highlight! link Visual CursorLine
 
 inoremap <C-[> <Esc>
 
@@ -45,8 +48,8 @@ let g:syntastic_shell = "/bin/zsh"
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors = 1
 "TODO: Figure out why jscs is so slow"
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_json_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_json_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubylint']
 let g:syntastic_java_checkers = []
 let g:typescript_indent_disable = 0
@@ -151,3 +154,5 @@ autocmd BufWritePre * :%s/\t/    /e
 
 "Don't expand tabs in make files"
 autocmd FileType make setlocal noexpandtab
+
+hi Visual ctermfg=Yellow ctermbg=NONE cterm=bold
