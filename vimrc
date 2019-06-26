@@ -48,7 +48,8 @@ let g:syntastic_shell = "/bin/zsh"
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors = 1
 "TODO: Figure out why jscs is so slow"
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = []
 let g:syntastic_json_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubylint']
 let g:syntastic_java_checkers = []
@@ -117,7 +118,7 @@ endif
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
+        return "    "
     else
         return "\<c-p>"
     endif
