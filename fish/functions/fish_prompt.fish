@@ -14,16 +14,21 @@ function git_branch
 end
 
 function docker_prompt
-  if set -q DOCKER_HOST
-    if echo $DOCKER_HOST | grep -q -E '192\.168\.99.+'
+  set dm_name ""
+  if set -q DOCKER_MACHINE_NAME
+    set dm_name "[$DOCKER_MACHINE_NAME] "
+    switch (echo $DOCKER_MACHINE_NAME)
+      case ids
+        set fish_docker_color brblue
+      case fdr
+        set fish_docker_color brblue
+      case '*'
         set fish_docker_color cyan
-    else
-        set fish_docker_color ff6a00
     end
   else
     set fish_docker_color normal
   end
-    printf '%s▶%s' (set_color $fish_docker_color) (set_color normal)
+    printf '%s%s▶%s' (set_color $fish_docker_color) (echo $dm_name) (set_color normal)
 end
 
 function fish_prompt

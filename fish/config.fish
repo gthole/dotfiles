@@ -11,3 +11,4 @@ init_tmux
 if test $HOME/.keys
     source $HOME/.keys
 end
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
