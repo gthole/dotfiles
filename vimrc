@@ -42,6 +42,8 @@ let NERDTreeIgnore = ['\.pyc$', '\.git/', '.DS_Store$', '.class$', '.swp$']
 let NERDTreeShowHidden = 1
 set backupdir=$TMPDIR
 set directory=$TMPDIR
+set wildignore+=.scrapy/
+let g:NERDTreeRespectWildIgnore = 1
 
 "Syntastic settings"
 let g:syntastic_shell = "/bin/zsh"
@@ -54,6 +56,8 @@ let g:syntastic_json_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubylint']
 let g:syntastic_java_checkers = []
 let g:typescript_indent_disable = 0
+
+" au BufNewFile,BufRead *.ejs set filetype=html
 
 "80 character line; TODO: split this off into after/"
 set colorcolumn=80

@@ -9,6 +9,7 @@ send-keys "rw; and clear" C-m
 split-window -d -h -p 33 -c '#{pane_current_path}'
 
 # This trick preserves the directory path
+# update - not working anymore
 swapp -D
 
 # Select the new pane (1)
