@@ -49,3 +49,6 @@
 [submodule "vim/bundle/aws-vim"]
 	path = vim/bundle/aws-vim
 	url = git@github.com:m-kat/aws-vim
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git@github.com:preservim/nerdtree.git
