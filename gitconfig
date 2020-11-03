@@ -12,3 +12,5 @@
   user = gthole
 [fetch]
   recurseSubmodules = yes
+[pull]
+	ff = only
