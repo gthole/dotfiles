@@ -4,10 +4,10 @@ ZSH_THEME="gthole"
 
 plugins=(git fabric vagrant)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 export EDITOR="vim"
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
 if [ -f $HOME/.keys ]; then
   source $HOME/.keys
