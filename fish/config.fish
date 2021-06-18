@@ -1,10 +1,12 @@
 set PATH /usr/local/bin ./node_modules/.bin ~/node_modules/.bin $PATH
 
 alias dm='docker-machine'
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # Because I keep typing this thinking I'm in vim
 alias jk='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
+
+alias json='python -m json.tool'
 
 init_tmux
 

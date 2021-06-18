@@ -13,6 +13,8 @@ elif [[ $# == 1 ]]; then
     pass -c $1
 elif [[ $1 == 'git' ]]; then
     pass $@
+elif [[ $1 == 'find' ]]; then
+    pass $@
 elif [[ $# == 0 ]]; then
     pass
 else
