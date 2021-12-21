@@ -1,0 +1,22 @@
+{
+  "name": "insomnia-plugin-enoc-session",
+  "version": "1.0.0",
+  "main": "app.js",
+  "insomnia": {
+    "name": "Enoc Session",
+    "displayName": "Enoc Session Plugin",
+    "description": "Get the enoc_session from auth requests, bucketed by env and auto-add it to all requests",
+    "images": {
+      "icon": "icon.svg",
+      "cover": "cover.svg"
+    },
+    "publisher": {
+      "name": "YOUR NAME HERE",
+      "icon": "https://..."
+    },
+
+    "unlisted": true
+  },
+  "dependencies": [],
+  "devDependencies": []
+}
