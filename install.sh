@@ -32,7 +32,7 @@ fi
 brew update
 
 # Install!
-brew install fish tmux git watch wget htop python3 node ag
+brew install fish tmux git watch wget htop python3 node ag pass
 # brew install imagemagick libpng jpeg libtiff
 # brew install reattach-to-user-namespace
 
