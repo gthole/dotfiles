@@ -8,6 +8,8 @@ if [[ $1 == 'use' ]]; then
 elif [[ $1 == 'using' ]]; then
     BRANCH=`pass git rev-parse --abbrev-ref HEAD`
     echo "Using branch $BRANCH"
+elif [[ $1 == 'gen' ]]; then
+    pwgen -sy 22 1
 elif [[ $# == 1 ]]; then
     # Default to "copy" mode
     pass -c $1
