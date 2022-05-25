@@ -73,7 +73,7 @@ set splitbelow
 set splitright
 
 "JSON formatting
-command Json execute "%!python -m json.tool"
+command Json execute "%!python3 -m json.tool"
 
 "CtrlP mappings"
 let g:ctrlp_map = '<c-p>'
