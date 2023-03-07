@@ -2,53 +2,50 @@
 	path = oh-my-zsh
   url = git@github.com:robbyrussell/oh-my-zsh.git
   ignore = untracked
-[submodule "vim/bundle/mustache.vim"]
-	path = vim/bundle/mustache.vim
-	url = git@github.com:juvenn/mustache.vim
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline
 [submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
+	path = vim/pack/git-plugins/start/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter
 [submodule "vim/bundle/vitality.vim"]
 	path = vim/bundle/vitality.vim
 	url = git@github.com:sjl/vitality.vim
   ignore = untracked
 [submodule "vim/bundle/vim-tmux-navigator"]
-	path = vim/bundle/vim-tmux-navigator
+	path = vim/pack/git-plugins/start/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator
   ignore = untracked
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim
 [submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
+	path = vim/pack/git-plugins/start/syntastic
 	url = git@github.com:gthole/syntastic.git
 [submodule "vim/bundle/vim-json"]
-	path = vim/bundle/vim-json
+	path = vim/pack/git-plugins/start/vim-json
 	url = https://github.com/elzr/vim-json.git
 [submodule "vim/bundle/Dockerfile"]
 	path = vim/bundle/Dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
 [submodule "vim/bundle/vim-terraform"]
-	path = vim/bundle/vim-terraform
+	path = vim/pack/git-plugins/start/vim-terraform
 	url = git@github.com:hashivim/vim-terraform.git
-[submodule "vim/bundle/vim-gradle"]
-	path = vim/bundle/vim-gradle
-	url = git@github.com:tfnico/vim-gradle
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = git@github.com:fatih/vim-go.git
 [submodule "vim/bundle/vim-fish"]
-	path = vim/bundle/vim-fish
+	path = vim/pack/git-plugins/start/vim-fish
 	url = git@github.com:dag/vim-fish.git
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = git@github.com:leafgarland/typescript-vim.git
-[submodule "vim/bundle/aws-vim"]
-	path = vim/bundle/aws-vim
-	url = git@github.com:m-kat/aws-vim
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim/pack/git-plugins/start/nerdtree
 	url = git@github.com:preservim/nerdtree.git
+[submodule "vim/pack/git-plugins/start/ale"]
+	path = vim/pack/git-plugins/start/ale
+	url = git@github.com:dense-analysis/ale.git
+[submodule "vim/pack/git-plugins/start/typescript-vim"]
+	path = vim/pack/git-plugins/start/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "vim/pack/git-plugins/start/tsuquyomi"]
+	path = vim/pack/git-plugins/start/tsuquyomi
+	url = git@github.com:Quramy/tsuquyomi.git

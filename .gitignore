@@ -2,3 +2,4 @@
 .netrwhist
 fish/fishd.*
 mbtastatusrc.json
+.tmp/

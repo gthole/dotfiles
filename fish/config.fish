@@ -7,6 +7,7 @@ set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info"
 
 set PATH /usr/local/bin ./node_modules/.bin ~/node_modules/.bin $PATH
 
+alias activate='source ./.venv/bin/activate.fish'
 alias dm='docker-machine'
 alias dc='docker compose'
 
